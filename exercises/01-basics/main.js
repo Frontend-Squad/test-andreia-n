@@ -2,9 +2,13 @@
 // Keep implementations small, readable, and tested by running `npm test`.
 
 export function toTitleCase(s) {
-  // Trim, collapse internal spaces, title-case each word.
-  // "  hello   world " -> "Hello World"
+  return s
+    .trim() 
+    .split(/\s+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 }
+
 
 export function isPalindrome(s) {
   // Return true if s reads the same ignoring case and spaces.
